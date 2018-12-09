@@ -1,0 +1,79 @@
+﻿@model VulnerabilitiesApp.Models.Anunt
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Anunt</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Titlu" class="control-label"></label>
+                <input asp-for="Titlu" class="form-control" />
+                <span asp-validation-for="Titlu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input asp-for="Data" class="form-control" />
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descriere" class="control-label"></label>
+                <input asp-for="Descriere" class="form-control" />
+                <span asp-validation-for="Descriere" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdCategorie" class="control-label"></label>
+                <input asp-for="IdCategorie" class="form-control" />
+                <span asp-validation-for="IdCategorie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdSubCategorie" class="control-label"></label>
+                <input asp-for="IdSubCategorie" class="form-control" />
+                <span asp-validation-for="IdSubCategorie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pret" class="control-label"></label>
+                <input asp-for="Pret" class="form-control" />
+                <span asp-validation-for="Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdValuta" class="control-label"></label>
+                <input asp-for="IdValuta" class="form-control" />
+                <span asp-validation-for="IdValuta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Activ" /> @Html.DisplayNameFor(model => model.Activ)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Sters" /> @Html.DisplayNameFor(model => model.Sters)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

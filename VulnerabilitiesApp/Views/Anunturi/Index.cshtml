@@ -1,0 +1,84 @@
+﻿@model IEnumerable<VulnerabilitiesApp.Models.Anunt>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titlu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descriere)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCategorie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdSubCategorie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdValuta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sters)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titlu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descriere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCategorie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSubCategorie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdValuta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Activ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sters)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
